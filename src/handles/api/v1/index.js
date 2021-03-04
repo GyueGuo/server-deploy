@@ -1,9 +1,10 @@
 const Router = require('@koa/router');
-const getProjects = require('./getProjects');
+const project = require('./project');
 
+const baseUrl = '/api/v1'
 const router = new Router();
 
 router
-  .use('/api/v1', getProjects.routes(), getProjects.allowedMethods())
+  .use(baseUrl, project.routes(), project.allowedMethods())
 
 module.exports = router;
